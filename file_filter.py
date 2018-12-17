@@ -16,7 +16,7 @@ path = os.path.abspath(".")
 ignorePath = os.path.join(path, ".gitignore")
 
 def isCodeFile(filename):
-	if os.path.splitext(filename)[1].lower() in [".py", ".h", ".cpp", ".c", ".m", ".txt"]:
+	if os.path.splitext(filename)[1].lower() in [".bmp",".py", ".h", ".cpp", ".c", ".m", ".txt"]:
 		return True
 
 	return False
