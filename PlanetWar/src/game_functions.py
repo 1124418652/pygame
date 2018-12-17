@@ -10,7 +10,7 @@ def check_event(ship):
 				sys.exit()
 
 			if event.type == pygame.KEYDOWN:
-				if event.type == pygame.K_RIGHT:
+				if event.key == pygame.K_RIGHT:
 					ship.rect.centerx += 1
 		
 def update_screen(ai_setting, screen, ship):
