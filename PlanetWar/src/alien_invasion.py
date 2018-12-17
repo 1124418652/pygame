@@ -19,7 +19,7 @@ def run_game():
 	while True:
 		
 		# supervision the moment of mouse and keyboard
-		gf.check_event()
+		gf.check_event(ship)
 		gf.update_screen(ai_set, screen, ship)
 
 run_game()
