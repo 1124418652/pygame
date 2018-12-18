@@ -13,8 +13,8 @@ def cut_image(src_img, rect):
 	return region
 
 if __name__ == '__main__':
-	img_path = os.path.join(os.getcwd(), "../images/multboard.jpg")
-	dst_path = os.path.join(os.path.split(img_path)[0], 'board1.bmp')
-	src_img = Image.open(img_path)
-	board = cut_image(src_img, (20, 20, 95, 100))
-	board.save(dst_path)
+
+	img_path2 = "../images/ufo.jpeg"
+	src_img2 = Image.open(img_path2)
+	src_img2 = src_img2.resize((60, 30))
+	src_img2.save("../images/ufo.bmp")
