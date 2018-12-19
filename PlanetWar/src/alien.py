@@ -26,12 +26,24 @@ class Alien(Sprite):
 		self.rect.top = self.screen_rect.top
 		self.rect.x = float(self.rect.x)
 		self.rect.y = float(self.rect.y)
+		self.x_speed_factor = 1
+		self.y_speed_factor = 1
 
 		Alien.count += 1
 
 	def update(self):
-		pass
-
-	def blitme(self):
 		self.screen.blit(self.image, self.rect)
-		
+		direction = random.randint(0, 50)
+		left_flag = False
+		right_flag = False
+		if 0 == direction and self.rect.right < self.screen_rect.right:
+			right_flag = True
+			left_flag = False
+		elif 1 == direction and self.rect.left > self.screen_rect.left:
+			left_flag = True
+			right_flag = False
+		self.rect.y += self.y_speed_factor
+		if left_flag:
+			self.rect.x -= self.x_speed_factor
+		if right_flag:
+			self.rect.x += self.x_speed_factor

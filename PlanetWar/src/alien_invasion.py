@@ -23,6 +23,7 @@ def run_game():
 	while True:
 		
 		# supervision the moment of mouse and keyboard
+		gf.add_alien(ai_set, screen, aliens)
 		gf.check_event(ai_set, screen, ship, bullets)
 		ship.update()    # update the status of ship
 		bullets.update() # update the status of bullet

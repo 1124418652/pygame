@@ -21,3 +21,4 @@ class Settings():
 
 		# the setting of aliens
 		self.alien_num = 10
+		self.alien_speed_factor = 0.5

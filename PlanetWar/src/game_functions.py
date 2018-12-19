@@ -2,7 +2,9 @@
 
 import sys
 import pygame
+import random
 from bullet import Bullet
+from alien import Alien
 
 
 def check_event(ai_setting, screen, ship, bullets):
@@ -44,11 +46,14 @@ def update_screen(ai_setting, screen, ship, bullets, aliens):
 
 	screen.fill(ai_setting.bg_color)
 	ship.blitme()  # draw the ship
-	aliens.blitme()
+	aliens.update()
 
 	for bullet in bullets.sprites():   # draw all bullets created
 		bullet.draw_bullet()
 
 	pygame.display.flip()
 
-def add_alien():
+def add_alien(ai_setting, screen, aliens):
+	flag = random.randint(0, 50)
+	if 1 == flag and len(aliens) < ai_setting.alien_num:
+		aliens.add(Alien(screen))
